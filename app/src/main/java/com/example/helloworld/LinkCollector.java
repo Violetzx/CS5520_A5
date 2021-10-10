@@ -31,8 +31,6 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class LinkCollector extends AppCompatActivity {
-    public Bundle s;
-    ArrayList<String> name = new ArrayList<String>();
     ArrayList<String> linkCollector = new ArrayList<String>();
     LinearLayout linearLayout;
     @Override
@@ -75,27 +73,6 @@ public class LinkCollector extends AppCompatActivity {
             }
         }
 
-    }
-    private class LinkSpan extends URLSpan {
-        private LinkSpan(String url) {
-            super(url);
-        }
-
-        @Override
-        public void onClick(View view) {
-            String url = getURL();
-            if (url != null) {
-
-
-                startActivity(new Intent(LinkCollector.this,WebViewActivity.class).putExtra("url",url));
-
-            }
-        }
-    }
-
-    public void refresh(Bundle s){
-        super.onResume();
-        onCreate(s);
     }
 
     private void showInputDialog() {
